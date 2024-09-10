@@ -1,4 +1,4 @@
-ace.define("ace/theme/theme", ["require", "exports", "module", "ace/lib/dom"], function(require, exports, module) {
+ace.define("ace/theme/theme", ["require", "exports", "module", "ace/lib/dom"], function(require, exports,) {
     exports.isDark = false;  // Indica si es un tema oscuro o claro
     exports.cssClass = "ace-my-custom-theme";  // Clase CSS del tema
     exports.cssText = `
