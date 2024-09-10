@@ -25,7 +25,7 @@ function NavBarTab() {
   return (
     <Tabs
       defaultValue="Info"
-      className="flex flex-col mt-10 w-[-webkit-fill-available]"
+      className="flex flex-col mt-10 w-[-webkit-fill-available] "
     >
       <TabsList>
         <TabsTrigger value="Info">Info</TabsTrigger>
@@ -51,7 +51,7 @@ function NavBarTab() {
               variant={"default"}
               position={postitionTiype}
             >
-              Soy Una Barra
+              Component
             </NavBar>
           )}
         </section>

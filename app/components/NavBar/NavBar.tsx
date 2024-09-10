@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const navBarVariants = cva(
-  "flex items-center p-5 text-secondary rounded-lg transition-all duration-500 ease-in-out fixed backdrop-blur-md",
+  "flex items-center p-5 text-secondary rounded-lg transition-all duration-700 ease-in-out fixed backdrop-blur-md",
   {
     variants: {
       variant: {
@@ -43,6 +43,7 @@ interface NavBarProps extends VariantProps<typeof navBarVariants> {
 
 const NavBar = ({ children, distance = 70, position = "bottom", className, variant, size }: NavBarProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMouseInside, setIsMouseInside] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -75,13 +76,13 @@ const NavBar = ({ children, distance = 70, position = "bottom", className, varia
   const getTransformClass = () => {
     switch (position) {
       case "top":
-        return isVisible ? 'translate-y-0' : '-translate-y-full';
+        return isVisible || isMouseInside ? 'translate-y-0' : '-translate-y-full';
       case "bottom":
-        return isVisible ? 'translate-y-0' : 'translate-y-full';
+        return isVisible || isMouseInside ? 'translate-y-0' : 'translate-y-full';
       case "left":
-        return isVisible ? 'translate-x-0' : '-translate-x-full';
+        return isVisible || isMouseInside ? 'translate-x-0' : '-translate-x-full';
       case "right":
-        return isVisible ? 'translate-x-0' : 'translate-x-full';
+        return isVisible || isMouseInside ? 'translate-x-0' : 'translate-x-full';
       default:
         return '';
     }
@@ -92,10 +93,12 @@ const NavBar = ({ children, distance = 70, position = "bottom", className, varia
       className={cn(
         navBarVariants({ variant, size, position, className }),
         'z-10',
-        isVisible ? 'opacity-100' : 'opacity-0',
+        isVisible || isMouseInside ? 'opacity-100' : 'opacity-0',
         getTransformClass(),
-        'transition-all duration-500 ease-in-out'
+        'transition-all duration-700 ease-in-out'
       )}
+      onMouseEnter={() => setIsMouseInside(true)}
+      onMouseLeave={() => setIsMouseInside(false)}
     >
       {children}
     </div>
