@@ -24,7 +24,7 @@ export default function Home() {
         <BlurFade delay={0.65} inView className="flex flex-col">
           <p className=" whitespace-pre-wrap text-center text-xl tracking-tighter text-black dark:text-white font-geist font-normal">
             Compatible with the shadcn configuration (color palette), if you
-            want to contribute to the project don't forget to create an issue!
+            want to contribute to the project don&apos;t forget to create an issue!
           </p>
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
             <a href="https://github.com/VMASPAD/extra-shadcn">Github</a>

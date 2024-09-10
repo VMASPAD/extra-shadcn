@@ -1,18 +1,17 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { Copy, Check } from "lucide-react"; // Asegúrate de importar los iconos correctos
 
 interface CodeBadgeProps {
-  children: React.ReactNode;
+  children: ReactNode;
   iconCopy?: boolean;
 }
 
 function CodeBadge({ children, iconCopy }: CodeBadgeProps) {
   const [buttonCopy, setButtonCopy] = useState(false);
 
-  const copyToClipboard = (text: string) => {
+  const copyToClipboard = (text: string = "") => {
     navigator.clipboard.writeText(text).then(() => {
       setButtonCopy(true);
       setTimeout(() => setButtonCopy(false), 2000);
@@ -20,7 +19,7 @@ function CodeBadge({ children, iconCopy }: CodeBadgeProps) {
   };
 
   const handleClick = () => {
-    copyToClipboard(children.toString());
+    copyToClipboard(children?.toString());
   };
 
   if (iconCopy === true) {

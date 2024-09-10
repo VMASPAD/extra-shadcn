@@ -49,7 +49,7 @@ function NavBarTab() {
               size={"lg"}
               distance={70}
               variant={"default"}
-              position={postitionTiype}
+              position={postitionTiype as "bottom" | "top" | "left" | "right" | null | undefined}
             >
               Component
             </NavBar>
