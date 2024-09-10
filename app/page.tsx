@@ -21,7 +21,7 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.75} inView>
           <p className=" whitespace-pre-wrap text-center text-xl tracking-tighter text-black dark:text-white font-geist font-normal">
-            Extra shadcn
+          Compatible with the shadcn configuration (color palette), if you want to contribute to the project don't forget to create an issue!
           </p>
           </BlurFade>
           <div className="grid grid-cols-2 gap-10 z-10">
