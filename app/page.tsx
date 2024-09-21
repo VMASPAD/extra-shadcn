@@ -5,14 +5,15 @@ import CodeBadgeTab from "./components/CodeBadge/CodeBadgeTab";
 import BlurFade from "@/components/magicui/blur-fade";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import { ArrowRightIcon } from "lucide-react";
+import CanvasBadgeTab from "./components/VideoBadge/VideoTab";
 
 export default function Home() {
   return (
-    <section className="w-screen h-screen "> 
+    <section className=""> 
       <div className="relative h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20 md:shadow-xl">
-        <div>
+        <div className="z-10">
         <BlurFade delay={0.35} inView>
-          <p className=" whitespace-pre-wrap text-center text-8xl tracking-tighter text-black dark:text-white font-geist font-extrabold">
+          <p className=" whitespace-pre-wrap text-center text-8xl tracking-tighter text-black dark:text-white font-geist font-extrabold ">
             Extra shadcn
           </p>
         </BlurFade>
@@ -33,10 +34,12 @@ export default function Home() {
         </BlurFade>  
         </div>
          
-        <BlurFade delay={0.85} inView className="grid grid-cols-2 gap-10 ">
+        <BlurFade delay={0.85} inView className="grid grid-cols-2 gap-10 z-10">
             <NavBarTab /> 
             <CodeBadgeTab />
+            <CanvasBadgeTab />
             </BlurFade> 
+      </div> 
         <DotPattern
           width={15}
           height={15}
@@ -47,7 +50,6 @@ export default function Home() {
             "[mask-image:radial-gradient(450px_circle_at_center,white,transparent)]"
           )}
         />
-      </div> 
     </section>
     
   );
